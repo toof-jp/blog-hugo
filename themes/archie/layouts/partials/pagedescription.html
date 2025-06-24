@@ -1,0 +1,12 @@
+<div class="description">
+	{{ if isset .Params "featured_image" }}
+	<div class="summary-image">
+		<img src="{{ .Params.featured_image }}" alt="Featured image" style="max-width: 200px; height: auto; margin-bottom: 10px;">
+	</div>
+	{{ end }}
+	{{ if isset .Params "description" }}
+	{{ .Description | .Page.RenderString }}
+	{{ else }}
+	{{ .Summary | .Page.RenderString }}&hellip;
+	{{ end }}
+</div>
